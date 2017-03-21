@@ -140,6 +140,8 @@ return [
         /*
          * Laravel Framework Service Providers...
          */
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Laravel\Scout\ScoutServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,

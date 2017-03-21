@@ -27,6 +27,10 @@
                 <a href="{{ url('/contact') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Contact</span>
                 </a>
             </li>
+            <li class="{{ isActiveRoute('post')}}">
+                <a href="{{ url('/post') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Post</span>
+                </a>
+            </li>
         </ul>
 
     </div>
