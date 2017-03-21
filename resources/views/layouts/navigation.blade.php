@@ -18,11 +18,11 @@
                     IN+
                 </div>
             </li>
-            <li class="{{ isActiveRoute('main') }}">
-                <a href="{{ url('/') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Main view</span></a>
+            <li class="{{ isActiveRoute('home') }}">
+                <a href="{{ url('/') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard view</span></a>
             </li>
-            <li class="{{ isActiveRoute('minor') }}">
-                <a href="{{ url('/contact') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Minor view</span> </a>
+            <li class="{{ isActiveRoute('contact') }}">
+                <a href="{{ url('/contact') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Contact view</span> </a>
             </li>
             <li class="{{ isActiveRoute('post') }}">
                 <a href="{{ url('/post') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Post view</span> </a>
