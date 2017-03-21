@@ -9,15 +9,22 @@
             </form>
         </div>
         <ul class="nav navbar-top-links navbar-right">
+            <li>
+                <span class="m-r-sm text-muted welcome-message">Welcome to INSPINIA+ Admin Theme.</span>
+            </li>
+            <message></message>
             @if (Auth::guest())
                 <li><a href="{{ route('login') }}">Login</a></li>
                 <li><a href="{{ route('register') }}">Register</a></li>
             @else
             <li>
-                <a href="#">
+                <a href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                     <i class="fa fa-sign-out"></i> Log out
                 </a>
             </li>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                {{ csrf_field() }}
+            </form>
             @endif
         </ul>
     </nav>

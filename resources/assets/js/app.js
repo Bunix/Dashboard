@@ -17,6 +17,7 @@ require('./layout');
 console.log($('.panel-heading').text());
 $('.panel-heading').metisMenu();
 Vue.component('example', require('./components/Example.vue'));
+Vue.component('message', require('./components/Message.vue'));
 
 const app = new Vue({
     el: '#app'
