@@ -24,6 +24,10 @@ class User extends Authenticatable
      *
      * @var array
      */
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
     protected $hidden = [
         'password', 'remember_token',
     ];

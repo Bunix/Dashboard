@@ -42,8 +42,9 @@
                                     <a class="btn btn-white btn-xs" type="button" href="{{'/post/'.$post->id.'/edit'}}">Edit</a>
                                 </div>
                                 <div class="search-result">
-                                    <h3><a href="#">{{$post->title}}</a></h3>
-                                    <a href="#" class="search-link">{{Auth::user()->email}}</a>
+                                    <h3><a href="{{'/post/'.$post->id}}">{{$post->title}}</a></h3>
+                                    <a href="#" class="search-link">{{Auth::user()->email}}</a><br>
+                                    <small href="#" class="search-link">{{$post->created_at->diffForHumans()}}</small>
                                     <p>
                                         {!! $post->content !!}
                                     </p>
