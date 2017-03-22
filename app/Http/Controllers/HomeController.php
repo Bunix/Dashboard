@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Zizaco\Entrust\EntrustFacade;
 
 class HomeController extends Controller
 {
@@ -23,7 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('app.home');
+       $test = EntrustFacade::hasRole('admin');
+       return view('app.home');
     }
     /**
      * Show the application contact.

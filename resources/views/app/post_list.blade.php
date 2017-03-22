@@ -46,7 +46,7 @@
                                     <a href="#" class="search-link">{{Auth::user()->email}}</a><br>
                                     <small href="#" class="search-link">{{$post->created_at->diffForHumans()}}</small>
                                     <p>
-                                        {!! $post->content !!}
+                                        {!! $post->text !!}
                                     </p>
                                 </div>
                                 <div class="hr-line-dashed"></div>

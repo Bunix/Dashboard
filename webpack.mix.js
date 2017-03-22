@@ -24,6 +24,7 @@ mix.sass('resources/assets/sass/app.scss', 'public/css')
     'resources/assets/vendor/font-awesome/css/font-awesome.css',
     'resources/assets/vendor/summernote/summernote.css',
     'resources/assets/vendor/summernote/summernote-bs3.css',
+    'resources/assets/vendor/toastr/toastr.min.css',
 ], 'public/css/vendor.css', './')
     .scripts([
     'resources/assets/vendor/jquery/jquery-3.1.1.min.js',
@@ -32,5 +33,6 @@ mix.sass('resources/assets/sass/app.scss', 'public/css')
     'resources/assets/vendor/slimscroll/jquery.slimscroll.min.js',
     'resources/assets/vendor/pace/pace.min.js',
     'resources/assets/vendor/summernote/summernote.min.js',
+    'resources/assets/vendor/toastr/toastr.min.js',
     'resources/assets/js/app.js'
 ], 'public/js/app.js', './');

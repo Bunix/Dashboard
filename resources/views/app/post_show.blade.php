@@ -41,7 +41,7 @@
                             </h1>
                         </div>
                         <p>
-                            {!! $post->content !!}
+                            {!! $post->text !!}
                         </p>
                         <hr>
                         <div class="row">

@@ -5,10 +5,13 @@ namespace App\Http\Controllers;
 use App\Post;
 use Auth;
 use Illuminate\Http\Request;
-use Redirect;
 
 class PostController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('permission');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +19,6 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
         $posts = Post::paginate(5);
         return view('app.post_list',compact('posts'));
     }
@@ -49,14 +51,10 @@ class PostController extends Controller
             return redirect()->back()->withErrors($validator);
         }
         $user = Auth::user();
-        $post = new Post();
-        $test = $request->title;
-        $post->title = $request->title;
-        $post->tag = $request->tag;
-        $post->content = $request->text;
-        $post->user_id = $user->id;
-        $post->save();
-        return redirect('/post');
+        $request->merge(['user_id'=>$user->id]);
+        Post::create($request->all());
+        session()->flash('message','Post has been created successfully');
+        return redirect('post');
     }
 
     /**
@@ -99,11 +97,8 @@ class PostController extends Controller
         if($validator->fails()){
             return redirect()->back()->withErrors($validator);
         }
-        $post->title = $request->title;
-        $post->tag = $request->tag;
-        $post->content = $request->text;
-        $post->save();
-        echo ":";
+        $post->update($request->all());
+        session()->flash('message','Post has been updated successfully');
         return redirect('/post');
     }
 

@@ -8,7 +8,7 @@ class Post extends Model
 {
 //    use Searchable;
     protected $fillable = [
-        'title', 'tag', 'content','user_id',
+        'title', 'tag', 'text','user_id',
     ];
     public function user()
     {

@@ -44,5 +44,22 @@
 
 @section('scripts')
 @show
+
+    <script type="text/javascript">
+        setTimeout(function () {
+            toastr.options = {
+                closeButton: true,
+                progressBar: true,
+                showMethod: 'slideDown',
+                timeOut: 4000
+            };
+            @if(session()->has('message'))
+                toastr.success('', "{{session()->get('message')}}");
+            @elseif(session()->has('errorMessage'))
+                toastr.error('', {{session()->get('errorMessage')}});
+            @endif
+        }, 1300);
+    </script>
+
 </body>
 </html>
