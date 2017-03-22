@@ -4,6 +4,7 @@
  *   version 2.7
  *
  */
+require('./vendor');
 
 $(document).ready(function () {
 
