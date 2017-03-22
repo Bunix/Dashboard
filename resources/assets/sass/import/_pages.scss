@@ -3,7 +3,10 @@
 .search-form {
   margin-top: 10px;
 }
-
+.search-result{
+  height: 100px;
+  overflow: hidden;
+}
 .search-result h3 {
   margin-bottom: 0;
   color: #1E0FBE;
@@ -16,6 +19,8 @@
 .search-result p {
   font-size: 12px;
   margin-top: 5px;
+  height:60px;
+  overflow: hidden;
 }
 
 /* CONTACTS */

@@ -17,7 +17,7 @@ class PostController extends Controller
     public function index()
     {
         //
-        $posts = Post::all();
+        $posts = Post::paginate(5);
         return view('app.post_list',compact('posts'));
     }
 
@@ -29,7 +29,7 @@ class PostController extends Controller
     public function create()
     {
         //
-        return view('app.post_edit');
+        return view('app.post_create');
     }
 
     /**
@@ -41,7 +41,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $validator = \Validator::make($request->input(),[
-           'subject'=>'required',
+           'title'=>'required',
             'tag'=>'required',
             "text"=>'required'
         ]);
@@ -50,12 +50,13 @@ class PostController extends Controller
         }
         $user = Auth::user();
         $post = new Post();
-        $post->subject = $request->subject;
+        $test = $request->title;
+        $post->title = $request->title;
         $post->tag = $request->tag;
         $post->content = $request->text;
         $post->user_id = $user->id;
         $post->save();
-        return Redirect::to('post');
+        return redirect('/post');
     }
 
     /**
@@ -77,7 +78,8 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        $item = Post::find($post->id);
+        return view('app.post_edit',compact('item'));
     }
 
     /**
@@ -89,7 +91,20 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $validator = \Validator::make($request->input(),[
+            'title'=>'required',
+            'tag'=>'required',
+            "text"=>'required'
+        ]);
+        if($validator->fails()){
+            return redirect()->back()->withErrors($validator);
+        }
+        $post->title = $request->title;
+        $post->tag = $request->tag;
+        $post->content = $request->text;
+        $post->save();
+        echo ":";
+        return redirect('/post');
     }
 
     /**

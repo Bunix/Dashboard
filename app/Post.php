@@ -6,17 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 use Laravel\Scout\Searchable;
 class Post extends Model
 {
-    use Searchable;
+//    use Searchable;
     protected $fillable = [
-        'subject', 'tag', 'content','user_id',
+        'title', 'tag', 'content','user_id',
     ];
+
     /**
      * Get index name。
      *
      * @return string
      */
-    public function searchableAs()
-    {
-        return 'posts_index';
-    }
+//    public function searchableAs()
+//    {
+//        return 'posts_index';
+//    }
 }
