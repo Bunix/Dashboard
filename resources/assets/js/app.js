@@ -5,9 +5,7 @@
  *
  */
 require('./vendor');
-
 $(document).ready(function () {
-
 
     // Add body-small class if window less than 768px
     if ($(this).width() < 769) {

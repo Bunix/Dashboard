@@ -11,12 +11,9 @@ const { mix } = require('laravel-mix');
  |
  */
 
-mix
-    .scripts([
-        'resources/assets/js/pace.min.js',
-    ], 'public/js/app.js', './')
-    .js('resources/assets/js/app.js',
+mix.js('resources/assets/js/app.js',
     'public/js/app.js')
+    .copy('resources/assets/js/pace.min.js','public/js')
     .sass('resources/assets/sass/app.scss', 'public/css')
         .copy('resources/assets/vendor/bootstrap/fonts', 'public/fonts')
         .copy('resources/assets/vendor/font-awesome/fonts', 'public/fonts')

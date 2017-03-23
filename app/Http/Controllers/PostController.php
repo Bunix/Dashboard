@@ -99,7 +99,7 @@ class PostController extends Controller
         }
         $post->update($request->all());
         session()->flash('message','Post has been updated successfully');
-        return redirect('/post');
+        return redirect('post');
     }
 
     /**
@@ -110,6 +110,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        return redirect('post');
     }
 }

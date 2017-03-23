@@ -40,6 +40,8 @@
                             @foreach($posts as $post)
                                 <div class="pull-right">
                                     <a class="btn btn-white btn-xs" type="button" href="{{'/post/'.$post->id.'/edit'}}">Edit</a>
+
+                                    <a href="{{'/post/'.$post->id}}" data-method="delete" data-confirm="Are you sure?">Delete</a>
                                 </div>
                                 <div class="search-result">
                                     <h3><a href="{{'/post/'.$post->id}}">{{$post->title}}</a></h3>
